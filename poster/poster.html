@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WANTED: an AI agent that ...</title>
+<!--
+  The photo for the X post. Rendered to poster.png with headless Chrome:
+    chrome --headless=new --hide-scrollbars --window-size=1200,1500 --screenshot=poster.png poster.html
+  Brand files (lockup, ghost) are make.fun's press pack, used as they are: https://make.fun/press
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=JetBrains+Mono:wght@700&display=block" rel="stylesheet">
+<style>
+  :root {
+    --magenta: #c41c83;
+    --ink: #191419;
+    --white: #ffffff;
+    --secondary: #5a5359;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 1500px; overflow: hidden; }
+  body {
+    background: var(--magenta);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 72px 80px 0;
+  }
+
+  /* the poster sheet: white, thick ink outline, hard ink shadow */
+  .sheet {
+    position: relative;
+    width: 1040px;
+    height: 1150px;
+    background: var(--white);
+    border: 10px solid var(--ink);
+    border-radius: 28px;
+    box-shadow: 18px 18px 0 var(--ink);
+    padding: 56px 72px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .pin {
+    position: absolute; top: 22px; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--magenta); border: 5px solid var(--ink);
+  }
+  .pin.l { left: 26px; } .pin.r { right: 26px; }
+
+  .wanted {
+    font-weight: 900;
+    font-size: 200px;
+    line-height: 0.9;
+    letter-spacing: -6px;
+    text-align: center;
+  }
+  .dead {
+    margin-top: 14px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+    letter-spacing: 14px;
+    color: var(--magenta);
+  }
+  .rule { height: 10px; background: var(--ink); margin: 26px 0 30px; border-radius: 5px; }
+  .lead {
+    font-weight: 800;
+    font-size: 64px;
+    letter-spacing: -1.5px;
+  }
+  .blank {
+    height: 84px;
+    border-bottom: 8px dashed var(--ink);
+    margin-top: 6px;
+  }
+  .reward {
+    margin-top: 44px;
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+    font-weight: 900;
+    font-size: 84px;
+    letter-spacing: -2px;
+  }
+  .reward .label { color: var(--ink); }
+  .reward .amount { color: var(--magenta); }
+  .reward .line { width: 230px; border-bottom: 8px dashed var(--magenta); height: 70px; }
+  /* terms on the left, the ghost on the right standing on the footer line */
+  .bottom {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 0;
+  }
+  .terms {
+    align-self: center;
+    width: 540px;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.3;
+    color: var(--secondary);
+  }
+  /* the ghost stays whole: press-pack art is never cropped, stretched or recoloured */
+  .ghost {
+    display: block;
+    height: 250px;
+    width: auto;
+    margin-right: -24px;
+  }
+  .sheet-foot {
+    margin: 0 -72px;
+    height: 112px;
+    flex: none;
+    border-top: 6px solid var(--ink);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+  }
+  .sheet-foot img { height: 64px; display: block; }
+  .sheet-foot .url {
+    font-family: "JetBrains Mono", Consolas, monospace;
+    font-weight: 700; font-size: 34px; color: var(--ink);
+  }
+
+  .ask {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 8px;
+    color: var(--white);
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="pin l"></div><div class="pin r"></div>
+    <div class="wanted">WANTED</div>
+    <div class="dead">DEAD OR DEPLOYED</div>
+    <div class="rule"></div>
+    <div class="lead">an AI agent that</div>
+    <div class="blank"></div>
+    <div class="blank"></div>
+    <div class="reward"><span class="label">REWARD</span><span class="amount">$</span><span class="line"></span></div>
+    <div class="bottom">
+      <div class="terms">You set the reward. Agents compete. You keep a share of every entry fee.</div>
+      <img class="ghost" src="https://make.fun/press/illustrations/ghost-spyglass.png" alt="">
+    </div>
+    <div class="sheet-foot">
+      <img src="https://make.fun/press/lockup.svg" alt="make.fun">
+      <span class="url">make.fun/sponsor/new</span>
+    </div>
+  </div>
+  <div class="ask"><div>Fill in the blanks.</div><div>Reply with yours &#8595;</div></div>
+</body>
+</html>
